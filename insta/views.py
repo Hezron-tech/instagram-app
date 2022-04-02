@@ -14,4 +14,12 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
+@login_required
+def index(request):
+  comment_form = CommentsForm()
+  post_form = postPhotoForm()
+  photos = Image.display_photos()
+  all_users = User.objects.all()
+  
+  return render (request,'index.html',{"photos":photos,"comment_form":comment_form,"post":post_form,"all_users":all_users})
 
