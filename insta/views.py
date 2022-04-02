@@ -127,13 +127,13 @@ def like(request, image_id):
 
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
-# @login_required
-# def unfollow(request,user_id):
-#   followee = request.user
-#   follower = Follows.objects.get(pk=user_id)
-#   follow_data = Follows.objects.filter(follower = follower,followee = followee).first()
-#   follow_data.delete()
-#   return redirect('users_profile')
+@login_required
+def unfollow(request,user_id):
+  followee = request.user
+  follower = Follows.objects.get(pk=user_id)
+  follow_data = Follows.objects.filter(follower = follower,followee = followee).first()
+  follow_data.delete()
+  return redirect('users_profile')
 
 # @login_required
 # def delete(request,photo_id):
