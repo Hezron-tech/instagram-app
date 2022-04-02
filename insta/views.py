@@ -135,24 +135,24 @@ def unfollow(request,user_id):
   follow_data.delete()
   return redirect('users_profile')
 
-# @login_required
-# def delete(request,photo_id):
-#   current_user = request.user
-#   photo = Image.objects.get(pk=photo_id)
-#   if photo:
-#     photo.delete_post()
-#   return redirect('home')
+@login_required
+def delete(request,photo_id):
+  current_user = request.user
+  photo = Image.objects.get(pk=photo_id)
+  if photo:
+    photo.delete_post()
+  return redirect('home')
 
 
-# @login_required
-# def commentFunction(request,photo_id):
-#   c_form = CommentsForm()
-#   photo = Image.objects.filter(pk = photo_id).first()
-#   if request.method == 'POST':
-#     c_form = CommentsForm(request.POST)
-#     if c_form.is_valid():
-#       comment = c_form.save(commit = False)
-#       comment.user = request.user
-#       comment.photo = photo
-#       comment.save() 
-#   return redirect('home')
+@login_required
+def commentFunction(request,photo_id):
+  c_form = CommentsForm()
+  photo = Image.objects.filter(pk = photo_id).first()
+  if request.method == 'POST':
+    c_form = CommentsForm(request.POST)
+    if c_form.is_valid():
+      comment = c_form.save(commit = False)
+      comment.user = request.user
+      comment.photo = photo
+      comment.save() 
+  return redirect('home')
