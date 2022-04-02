@@ -8,14 +8,14 @@ class postPhotoForm(forms.ModelForm):
     model = Image
     fields = ['photo','photo_name','photo_caption']
 
-# class CommentsForm(forms.ModelForm):
-#   def __init__(self,*args,**kwargs):
-#     super().__init__(*args,**kwargs)
-#     self.fields['comment'].widget=forms.TextInput()
-#     self.fields['comment'].widget.attrs['placeholder']='Leave a comment...'
-#   class Meta:
-#     model = Comment
-#     fields = ('comment',)
+class CommentsForm(forms.ModelForm):
+  def __init__(self,*args,**kwargs):
+    super().__init__(*args,**kwargs)
+    self.fields['comment'].widget=forms.TextInput()
+    self.fields['comment'].widget.attrs['placeholder']='Leave a comment...'
+  class Meta:
+    model = Comment
+    fields = ('comment',)
     
 # class Registration(UserCreationForm):
 #   email = forms.EmailField()
