@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'insta.apps.InstaConfig',
+    'cloudinary',
+    'bootstrap4',
+    
     
 
 ]
