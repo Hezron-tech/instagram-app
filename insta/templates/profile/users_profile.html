@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% block content %}
 <div class="container-fluid">
   <div class="row">
@@ -19,7 +19,7 @@
           <h3 class="">{{user.username}}</h3>
         </div>
 
-        <div class="row2 mt-3">
+        <div class="row2 mt-6">
           <p class="">{{photos|length}} posts</p>
           <p class="">{{user.profile.saved_followers}} followers</p>
           <p class="">{{user.profile.saved_following}} following</p>

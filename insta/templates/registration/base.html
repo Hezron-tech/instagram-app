@@ -1,9 +1,7 @@
 {% load bootstrap4 %}
 {% load static %}
-{% load cloudinary %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,35 +12,29 @@
   {% else %}
   <title>Instagram |Clone </title>
   {% endif %}
-
   {% block styles %}
   {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   {% endblock styles %}
 </head>
-
 <body>
   <div class="container-fluid">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="">
             <p style="color: #4888BE;font-size:50px; font-style: italic;"><i class="fa fa-instagram"  aria-hidden="true"></i> Instagram</p>
           </a>
-
           <!-- button -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar">Register</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
         </div>
-
-
         <!-- navbar links updates -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -71,22 +63,19 @@
             </li>
             {% else %}
             <li>
-              <a class='btn btn-default' style="color: #4888BE;" href="{% url 'register' %}">Sigup</a>
+              <a class='btn btn-default' style="color: #4888BE;" href="{% url 'register' %}">Signup</a>
             </li>
             <li>
               <a class='btn btn-default' style="color: #4888BE; margin-left:5px" href="{% url 'login' %}">Login</a>
             </li>
-
             {% endif %}
         </div>
         </li>
         </ul>
       </div>
-
   </div>
   {% block content %}
   {% endblock content %}
-
   {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -95,5 +84,13 @@
   <script src="../static/js/script.js"></script>
   {% endblock scripts %}
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
